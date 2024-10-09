@@ -1,0 +1,23 @@
+h1 {
+	
+	color: red;
+	
+}
+body {
+	margin-left: 30%; 
+}
+table, tr, td, th {
+    
+	border-collapse: collapse;
+	border: solid black 2px;
+}
+tr {
+	
+	text-align: center; 
+	
+}
+img{
+	
+	width: 30px;
+	
+}

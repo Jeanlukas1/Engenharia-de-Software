@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <title>Exercicio</title>
+    <style>
+      body {
+        background-color: #47036e9d;
+        text-align: center;
+      }
+      
+      img {
+      padding: 40px; 
+      border: solid 10px rgb(0, 0, 0); 
+    }
+      h1 {
+        font-size: 30px;
+        font-family:monospace;
+      }
+      p {
+        font-size: 14px;
+        font-family:cursive ;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="https://cdn.pixabay.com/photo/2021/02/25/14/12/rinnegan-6049194_960_720.png" id="rinnegan">
+    <h1>Rinnegan</h1>
+    <p>Rinne sharingan</p>
+  </body>
+</html>

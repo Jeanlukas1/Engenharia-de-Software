@@ -1,0 +1,5 @@
+{
+    "powermode.shake.intensity": 2,
+    "powermode.presets": "particles",
+    "python.analysis.typeCheckingMode": "basic"
+}
