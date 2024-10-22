@@ -11,11 +11,9 @@ cores = {
 
 entrada = input("Digite a cor desejada: ")
 
-if entrada not in cores:
+if entrada in cores:
+    print(cores[entrada])
+    
+else:
     raise KeyError("Cor nao encontrada na lista")
-elif entrada == "vermelho":
-    print(f"Essa é a cor de {entrada} em RGB: {cores["vermelho"]}")
-elif entrada == "verde":
-    print(f"Essa é a cor de {entrada} em RGB: {cores["verde"]}")
-elif entrada == "azul":
-    print(f"Essa é a cor de {entrada} em RGB: {cores["azul"]}")
+
