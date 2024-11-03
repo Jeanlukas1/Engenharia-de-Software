@@ -5,12 +5,13 @@
 #  exemplo, "programação") e salve o conteúdo alterado em um novo arquivo chamado
 # `texto_modificado.txt`.
 
-with open('texto2.txt', 'w') as arquivo1:
-    arquivo1.write("Ola mundo, eu sou uma maquina \n")
-    arquivo1.write("Ola mundo, eu sou uma maquina \n")
-    arquivo1.write("Ola mundo, eu sou uma maquina \n")
+with open('texto.txt', 'r') as arquivo1:
+    conteudo = arquivo1.read()
+    
+novo_conteudo = conteudo.replace('mundo', 'Programação')
 
-with open('texto3.txt', 'w') as arquivo:
-    texto = arquivo1
-    novo_texto = ("mundo", "python")
-    arquivo.write("Modificado!")
+with open('texto_modificado.txt', 'w') as arquivo2:
+    arquivo2.write(novo_conteudo)
+    
+        
+    
