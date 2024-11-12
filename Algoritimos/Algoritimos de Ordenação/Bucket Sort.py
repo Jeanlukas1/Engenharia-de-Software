@@ -3,6 +3,16 @@
 # Descrição: O Bucket Sort distribui os elementos de uma lista em vários "baldes" (buckets) e, em seguida, 
 # ordena cada balde individualmente usando outro algoritmo de ordenação ou recursivamente aplicando o Bucket Sort.
 
+# Vantagens:
+
+# Muito eficiente para listas uniformemente distribuídas
+# Complexidade O(n + k)
+
+# Desvantagens:
+
+# Ineficiente se os dados não forem uniformemente distribuídos
+# Desempenho depende da estratégia de distribuição dos buckets
+
 # Implementação:
 def bucket_sort(arr):
     bucket = []
@@ -24,12 +34,5 @@ def bucket_sort(arr):
             k += 1
     return arr
 
-# Vantagens:
-
-# Muito eficiente para listas uniformemente distribuídas
-# Complexidade O(n + k)
-
-# Desvantagens:
-
-# Ineficiente se os dados não forem uniformemente distribuídos
-# Desempenho depende da estratégia de distribuição dos buckets
+resultado = bucket_sort([9, 8, 6, 3, 432, 243, 234 ,123, 4353, 456, 32, 1])
+print(resultado)

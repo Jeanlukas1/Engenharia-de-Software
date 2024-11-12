@@ -4,6 +4,16 @@
 # Ele constrói um heap a partir da lista e depois remove o maior elemento repetidamente para construir 
 # a lista ordenada.
 
+# Vantagens:
+
+# Complexidade O(n log n)
+# Não requer espaço adicional significativo
+
+# Desvantagens:
+
+# Não é estável
+# Pode ser mais lento que o Quick Sort na prática
+
 # Implementação:
 def heapify(arr, n, i):
     largest = i
@@ -29,14 +39,6 @@ def heap_sort(arr):
         heapify(arr, i, 0)
     return arr
 
-
-# Vantagens:
-
-# Complexidade O(n log n)
-# Não requer espaço adicional significativo
-
-# Desvantagens:
-
-# Não é estável
-# Pode ser mais lento que o Quick Sort na prática
+resultado = heap_sort([76, 234, 56, 13, 34, 5, 123, 3, 56, 13, 56, 234, 5, 1, 5, 67,])
+print(resultado)
 

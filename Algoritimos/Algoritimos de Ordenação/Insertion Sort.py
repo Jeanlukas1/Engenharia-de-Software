@@ -27,3 +27,6 @@ def insertion_sort(arr):
         arr[j + 1] = key
     return arr
 
+resultado = insertion_sort([1, 6 , 2, 7, 3])
+
+print(resultado)

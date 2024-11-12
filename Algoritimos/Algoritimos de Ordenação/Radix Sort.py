@@ -4,6 +4,16 @@
 # menos significativo para o mais significativo, usando um algoritmo de ordenação estável como o 
 # Counting Sort para cada dígito.
 
+# Vantagens:
+
+# Muito eficiente para listas de inteiros com um pequeno intervalo de dígitos
+# Complexidade O(nk) (onde k é o número de dígitos)
+
+# Desvantagens:
+
+# Não é adequado para ordenar tipos de dados mais complexos
+# Requer espaço adicional
+
 # Implementação:
 def counting_sort_for_radix(arr, exp):
     n = len(arr)
@@ -35,12 +45,5 @@ def radix_sort(arr):
         exp *= 10
     return arr
 
-# Vantagens:
-
-# Muito eficiente para listas de inteiros com um pequeno intervalo de dígitos
-# Complexidade O(nk) (onde k é o número de dígitos)
-
-# Desvantagens:
-
-# Não é adequado para ordenar tipos de dados mais complexos
-# Requer espaço adicional
+resultado = radix_sort([7, 5, 3, 3214, 45, 5, 5, 7, 54, 54, 6, 45, 34, 2])
+print(resultado)

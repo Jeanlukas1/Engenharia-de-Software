@@ -4,6 +4,17 @@
 # Ele divide a lista em duas metades, ordena cada metade recursivamente e, em seguida, 
 # combina as duas metades ordenadas.
 
+# Vantagens:
+
+# Estável
+# Complexidade O(n log n)
+# Eficiente para listas grandes
+
+# Desvantagens:
+
+# Utiliza espaço adicional (O(n))
+# Pode ser mais lento em listas pequenas comparado a algoritmos mais simples
+
 # Implementação:
 def merge_sort(arr):
     if len(arr) > 1:
@@ -35,13 +46,5 @@ def merge_sort(arr):
             k += 1
     return arr
 
-# Vantagens:
-
-# Estável
-# Complexidade O(n log n)
-# Eficiente para listas grandes
-
-# Desvantagens:
-
-# Utiliza espaço adicional (O(n))
-# Pode ser mais lento em listas pequenas comparado a algoritmos mais simples
+resultado = merge_sort([12, 141, 15, 563, 5654, 12, 1, 4, 5, 7, 13, 15, 113])
+print(resultado)
