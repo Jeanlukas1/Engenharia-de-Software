@@ -1,0 +1,73 @@
+body{
+	background-color: beige;
+	margin: 10px;
+}
+
+#Logo2 {
+	width: 400px;
+}
+
+#Logo {
+	width: 200px;
+}
+
+.botao {
+	text-align: center;
+}
+
+.linguagem {
+	background-color: white;
+	padding: 5px;
+	border-radius: 5px;
+}
+
+.linha {
+	border: 2px, solid, black;
+	margin: 0 10px 0 10px;
+}
+
+.menu {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	list-style: none;
+	font-size: 20px;
+	color: black;
+	text-shadow: 1px 2px 2px grey;
+}
+
+#inicio:hover {
+	display: block;
+	border: solid 2px black;
+	padding: 2px;
+	border-radius: 5px;
+	background-color: lightgrey;
+}
+
+#destaque:hover {
+	display: block;
+	border: solid 2px black;
+	padding: 2px;
+	border-radius: 5px;
+	background-color: lightgrey;
+}
+
+#catalogo:hover {
+	display: block;
+	border: solid 2px black;
+	padding: 2px;
+	border-radius: 5px;
+	background-color: lightgrey;
+}
+
+h1, p{
+	text-align: center;
+}
+
+.linha2 {
+	border: 2px, solid, black;
+	margin: 0 10px 0 10px;
+}
+
+<input class="button" type="button" onclick="funcao1()" value="Exibir Alert" />
+		<p type="button" onclick="funcao1()">sdalskdal</p>
