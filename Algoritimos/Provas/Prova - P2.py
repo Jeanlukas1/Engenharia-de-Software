@@ -18,13 +18,13 @@ def adicionar_obra(id, titulo, data_de_criacao, tema, estilo_artistico, descrica
         "descricao" : descricao,
         "tecnica_utilizada" : tecnica_utilizada,
         "autor" : autor,
-        "localizacao" : localizacao
+        "localizacao" : localizacao,
     }
-    print(f"Obra com titulo: {obra["titulo"]} \nData de Criação: {obra["data_de_criacao"]} \nTema: {obra["tema"]} \nEstilo Artístico: {obra["estilo_artistico"]} \nDescrição: {obra["estilo_artistico"]} \nTécnica Utilizada: {obra["tecnica_utilizada"]} \nAutor: {obra["autor"]} \nLocalização: {obra["localizacao"]}")
+    print(f"ID: {obra["id"]} Obra com titulo: {obra["titulo"]} \nData de Criação: {obra["data_de_criacao"]} \nTema: {obra["tema"]} \nEstilo Artístico: {obra["estilo_artistico"]} \nDescrição: {obra["descricao"]} \nTécnica Utilizada: {obra["tecnica_utilizada"]} \nAutor: {obra["autor"]} \nLocalização: {obra["localizacao"]}")
     print("Adicionada ao Acervo!!!")
     lista_de_obras.append(obra)
 
-def adicionar_artista(nome, data_de_nascimento, local_de_nascimento, biografia, estilos_artisticos, lista_de_obras):
+def adicionar_artista(nome, data_de_nascimento, local_de_nascimento, biografia, estilos_artisticos):
     artista = {
         "nome" : nome,
         "data_de_nascimento" : data_de_nascimento,
@@ -33,21 +33,19 @@ def adicionar_artista(nome, data_de_nascimento, local_de_nascimento, biografia, 
         "estilos_artisticos" : estilos_artisticos
     }
     print(f"Artista {artista["nome"]} foi cadastrado a lista de artistas!!")
-    if artista["nome"] in lista_de_artistas:
-        print(f"{nome} Bem vindo!!")
-        for i in lista_de_obras:
-            print(i["autor"])
-        return
     lista_de_artistas.append(artista)
 
 def listagem_de_artistas(lista_de_artistas):
-    if listagem_de_artistas == []:
+    if len(lista_de_artistas) == 0:
         print("Lista Vazia")
-    else:
-        for artistas in lista_de_artistas:
-            print(f"Artista {artistas + 1} - Nome: {artistas["nome"]} \nData de Nascimento: {artistas["data_de_nascimento"]} \nLocal de Nascimento: {artistas["local_de_nascimento"]} \nBiografia: {artistas["biografia"]} \nEstilo Artístico: {artistas["estilos_artistico"]}")
+        return
+    for artistas in lista_de_artistas:
+        print(f"Nome: {artistas["nome"]} \nData de Nascimento: {artistas["data_de_nascimento"]} \nLocal de Nascimento: {artistas["local_de_nascimento"]} \nBiografia: {artistas["biografia"]} \nEstilo Artístico: {artistas["estilos_artisticos"]}")
 
 def listagem_de_obras(lista_de_obras):
+    if len(lista_de_obras) == 0:
+        print("Lista Vazia!!")
+        return
     for obra in lista_de_obras:
         print(f"Obra {obra["id"]} - Título: {obra["titulo"]} \nData de Criação: {obra["data_de_criacao"]} \nTema: \nTema: {obra["tema"]} \nEstilo Artístico: {obra["estilo_artistico"]} \nDescrição: {obra["estilo_artistico"]} \nTécnica Utilizada: {obra["tecnica_utilizada"]} \nAutor: {obra["autor"]} \nLocalização: {obra["localizacao"]}")
 
@@ -115,7 +113,7 @@ def menu():
                 biografia = input("Adicione a biografia do artista:")
                 estilos_artisticos = input("Adicione o estilo artistico do artista:")
                 
-                adicionar_artista(nome, data_de_nascimento, local_de_nascimento, biografia, estilos_artisticos, lista_de_obras)
+                adicionar_artista(nome, data_de_nascimento, local_de_nascimento, biografia, estilos_artisticos)
 
             elif escolha_gestor == 2:
                 id = input("Digite o ID da obra")

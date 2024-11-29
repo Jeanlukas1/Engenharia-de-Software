@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/Prova - P2.css">
+    <title>Prova - P2</title>
+    <script>
+        // Objeto contendo as traduções
+        const translations = {
+            en: {
+                alertText: "Text in English.",
+                buttonText: "Português",
+                menuInicio: "Home",
+                menuDestaque: "Highlight",
+                menuCatalogo: "Catalog",
+                headerText: "A special food for a fantastic friend!",
+                footerText: "Avenida Akhabara, 123 / Tel: 91234-5678"
+            },
+            pt: {
+                alertText: "Texto em português.",
+                buttonText: "English",
+                menuInicio: "Inicio",
+                menuDestaque: "Destaque",
+                menuCatalogo: "Catálogo",
+                headerText: "Uma ração especial, para um amigo fantástico!",
+                footerText: "Avenida Akhabara, 123 / Tel: 91234-5678"
+            }
+        };
+
+        // Função para mudar a linguagem
+        function changeLanguage(language) {
+            alert(translations[language].alertText);
+            document.querySelector('.linguagem').innerText = translations[language].buttonText;
+            document.getElementById('inicio').innerText = translations[language].menuInicio;
+            document.getElementById('destaque').innerText = translations[language].menuDestaque;
+            document.getElementById('catalogo').innerText = translations[language].menuCatalogo;
+            document.querySelector('h1').innerText = translations[language].headerText;
+            document.querySelector('footer p').innerText = translations[language].footerText;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <p class="imagem"><img id="Logo" src="./images/imagem1Logo.png" alt="Logo"></p>
+        <div class="botao">
+            <button onclick="changeLanguage(document.querySelector('.linguagem').innerText.toLowerCase() === 'english' ? 'en' : 'pt')" value="Exibir Alert" class="linguagem">English</button>
+        </div>
+    </header>
+    <div class="linha"></div>
+    <main>
+        <div>
+            <ul class="menu">
+                <li id="inicio"><a href="Prova - P2.html">Inicio</a></li>
+                <li id="destaque"><a href="destaque.html">Destaque</a></li>
+                <li id="catalogo"><a href="catalogo.html">Catálogo</a></li>
+            </ul>
+        </div>
+        <div>
+            <p class="imagem"><img id="Logo2" src="./images/imagem2prova.png" alt="Imagem"></p>
+            <h1>Uma ração especial, para um amigo fantástico!</h1>
+        </div>
+        <div class="linha2"></div>
+    </main>
+    <footer>
+        <p>Avenida Akhabara, 123 / Tel: 91234-5678</p>
+    </footer>
+</body>
+</html>
+
