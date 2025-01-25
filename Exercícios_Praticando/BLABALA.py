@@ -17,9 +17,9 @@ def usuarios(lista_de_usuarios):
         print("Nenhum usuario Cadastrado!")
     else:
         for user in lista_de_usuarios:
-            print("Email:" ,user['email'], "Senha:" ,user['senha'],)  
+            print("Email:" ,user['email'], "Senha:" ,user['senha'],)
+
+def salvar_usuarios(lista_de_usuarios):
             
-            
-          
     
 usuarios(lista_de_usuarios)
