@@ -18,8 +18,6 @@ def usuarios(lista_de_usuarios):
     else:
         for user in lista_de_usuarios:
             print("Email:" ,user['email'], "Senha:" ,user['senha'],)
-
-def salvar_usuarios(lista_de_usuarios):
             
     
 usuarios(lista_de_usuarios)
