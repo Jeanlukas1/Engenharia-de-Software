@@ -55,7 +55,6 @@ Saque realizado no valor de: {float(valor)}
 """)
         else:
             print("Valor ou senha incorreta, Tente novamente!")
-    # Transferencia
     # Pix
     def pix(self, destinatario, valor):
         if isinstance(valor, (int, float)) and self.saldo >= valor:
