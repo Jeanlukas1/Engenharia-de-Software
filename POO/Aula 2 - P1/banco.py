@@ -82,5 +82,23 @@ Cliente: {self.cliente}
 --------------------------------------------
             """
         )
+#Menu
 
+def menu():
+    
+    while True:
+        
+        print("Menu do Cliente:")
+        print("1 - Dados da conta")
+        print("2 - Depósito")
+        print("3 - Saque")
+        print("4 - Pix")
+        print("5 - Extrato")
+        
+        decisao_cliente = input("Digite numero relacionado a opção do Menu a seguir ")
+        
+        
+        
+    
+        
     
