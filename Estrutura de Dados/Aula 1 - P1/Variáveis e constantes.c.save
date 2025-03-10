@@ -2,7 +2,54 @@
 #include <stdlib.h>
 
 int main (void){
-    //
-    printf("\n\n")
+
+    //variavel
+    int x;
+
+    //constante
+    float cons;
+
+    //Operacao aritimetica com as variaveis
+    float resultado;
+
+    //atribuindo valores as variaveis
+    x = 5;
+    cons = 3.14;
+
+    printf("\no valor da variavel x e: %d \n", x);
+    printf("\nO valor da constante cons e: %1.2f\n", cons);
+
+    resultado = x * cons;
+
+    printf("\nO resultado da multiplicacao ente a variavel X = %d e Constante Cons = %1.2f e igual a: %1.2f\n", x, cons, resultado);
+
+    printf("\n-------------------------------------------------------\n");
+    printf("\nExercicios\n");
+
+
+    printf("\n1) Crie um projeto, declare 4 variaveis para mostrar na tela a seguinte informacao:\n \nNome, Idade, Sexo e Altura. Lembrando que o tipo de variavel deve corresponder as informacoes que serao mostradas.\n \nEssas informacoes devem ser mostradas de forma organizada pulando uma linha para cada uma.\n");
+    printf("\nResolucao exercicio 1:\n");
+
+    char nome[80] = "Jean Lukas";
+    int idade = 34;
+    char sexo = 'M';
+    float altura = 1.34;
+
+    printf("\nNome: %s\n \nIdade: %d\n \nSexo: %c\n \nAltura: $1.2f\n", nome, idade, sexo, altura);
+
+
+    printf("\n-------------------------------------------------------\n");
+    printf("\n2) Marcelo tem 5 laranjas e Matheus 39. Crie 3 variaveis. 2 para armazenar os valores de Marcelo e Matheus e uma para receber o resultado do calculo\n \nDepois mostre o resultado na tela.\n");
+    printf("\nResolucao exercicio 2:\n");
+    
+    int marcelo = 5;
+    int matheus = 39;
+    int resultadoo = marcelo + matheus;
+    
+    printf("\nTotal de Laranjas:\n");
+    printf("\nMarcelo = %d", marcelo);
+    printf("\nMatheus = %d\n", matheus;)
+    printf("\nA quantidade de laranjas ao total é de: %d\n", resultadoo);
+    
     return 0;
 }
