@@ -8,6 +8,7 @@ int main() {
 
     cout << "Digite o número de linhas e colunas: ";
     cin >> n >> m;
+    cin >> n >> m;
 
     int a[n][m], b[n][m], c[n][m];
 
