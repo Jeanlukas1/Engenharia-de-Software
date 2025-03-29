@@ -1,5 +1,5 @@
 clientes = {}
-
+#adicionar
 def adicionar_cliente(nome, email, telefone, endereco):
     if email in clientes:
         print(f"Cliente com e-mail {email} já existe.")
