@@ -1,5 +1,5 @@
 class Estudante:
-    #definindo o método construtort
+    #definindo o método construtor
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
