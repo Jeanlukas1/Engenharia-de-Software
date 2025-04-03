@@ -59,8 +59,8 @@ public class Janela1 extends javax.swing.JFrame {
         chkbxAdmnistrativo = new javax.swing.JCheckBox();
         chkbxRepositor = new javax.swing.JCheckBox();
         chkbxAtendente = new javax.swing.JCheckBox();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnAdicionar = new javax.swing.JButton();
+        btnExcluir = new javax.swing.JButton();
         lblEstadoCivil = new javax.swing.JLabel();
         lblGenero = new javax.swing.JLabel();
         lblCargo = new javax.swing.JLabel();
@@ -174,15 +174,25 @@ public class Janela1 extends javax.swing.JFrame {
         chkbxAtendente.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         chkbxAtendente.setText("Atendente");
 
-        jButton1.setBackground(new java.awt.Color(0, 255, 51));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar-ficheiro.png"))); // NOI18N
-        jButton1.setText("Adicionar");
+        btnAdicionar.setBackground(new java.awt.Color(0, 255, 51));
+        btnAdicionar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAdicionar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/adicionar-ficheiro.png"))); // NOI18N
+        btnAdicionar.setText("Adicionar");
+        btnAdicionar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAdicionarActionPerformed(evt);
+            }
+        });
 
-        jButton2.setBackground(new java.awt.Color(255, 0, 51));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cesto-de-lixo.png"))); // NOI18N
-        jButton2.setText("Excluir");
+        btnExcluir.setBackground(new java.awt.Color(255, 0, 51));
+        btnExcluir.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnExcluir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/cesto-de-lixo.png"))); // NOI18N
+        btnExcluir.setText("Excluir");
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
 
         lblEstadoCivil.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblEstadoCivil.setText("Estado Civíl");
@@ -215,18 +225,33 @@ public class Janela1 extends javax.swing.JFrame {
         btnEditarIdade.setBorder(null);
         btnEditarIdade.setBorderPainted(false);
         btnEditarIdade.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditarIdade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarIdadeActionPerformed(evt);
+            }
+        });
 
         btnEditarTelefone.setBackground(new java.awt.Color(204, 204, 255));
         btnEditarTelefone.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/lapis.png"))); // NOI18N
         btnEditarTelefone.setBorder(null);
         btnEditarTelefone.setBorderPainted(false);
         btnEditarTelefone.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditarTelefone.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarTelefoneActionPerformed(evt);
+            }
+        });
 
         btnEditarCpf.setBackground(new java.awt.Color(204, 204, 255));
         btnEditarCpf.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/lapis.png"))); // NOI18N
         btnEditarCpf.setBorder(null);
         btnEditarCpf.setBorderPainted(false);
         btnEditarCpf.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnEditarCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEditarCpfActionPerformed(evt);
+            }
+        });
 
         btnEditarEmail.setBackground(new java.awt.Color(204, 204, 255));
         btnEditarEmail.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icones/lapis.png"))); // NOI18N
@@ -251,9 +276,9 @@ public class Janela1 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnAdicionar)
                 .addGap(42, 42, 42)
-                .addComponent(jButton2)
+                .addComponent(btnExcluir)
                 .addGap(50, 50, 50))
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
@@ -366,14 +391,14 @@ public class Janela1 extends javax.swing.JFrame {
                                 .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(btnEditarEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(63, 63, 63)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblDeficiencia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblCidade)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(71, 71, 71)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -406,8 +431,8 @@ public class Janela1 extends javax.swing.JFrame {
                             .addComponent(chkbxAtendente, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(49, 49, 49)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(btnAdicionar)
+                    .addComponent(btnExcluir))
                 .addGap(30, 30, 30))
         );
 
@@ -440,15 +465,60 @@ public class Janela1 extends javax.swing.JFrame {
 
     private void btnEditarNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarNomeActionPerformed
         // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "O campo nome foi limpo");
+        if(txtNome.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "O campo Nome ja esta vazio");
+    }else{
         txtNome.setText("");
-        
+        }
         
     }//GEN-LAST:event_btnEditarNomeActionPerformed
 
     private void btnEditarEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarEmailActionPerformed
         // TODO add your handling code here:
+        if(txtEmail.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "O campo Email ja esta vazio");
+    }else{
+        txtEmail.setText("");
+        }
     }//GEN-LAST:event_btnEditarEmailActionPerformed
+
+    private void btnEditarIdadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarIdadeActionPerformed
+        // TODO add your handling code here:
+        if(txtIdade.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "O campo Idade ja esta vazio");
+    }else{
+        txtIdade.setText("");
+        }
+    }//GEN-LAST:event_btnEditarIdadeActionPerformed
+
+    private void btnEditarTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarTelefoneActionPerformed
+        // TODO add your handling code here:
+        if(txtTelefone.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "O campo Telefone ja esta vazio");
+    }else{
+        txtTelefone.setText("");
+        }
+    }//GEN-LAST:event_btnEditarTelefoneActionPerformed
+
+    private void btnEditarCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarCpfActionPerformed
+        // TODO add your handling code here:
+        if(txtCpf.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "O campo CPF ja esta vazio");
+    }else{
+        txtCpf.setText("");
+        }
+    }//GEN-LAST:event_btnEditarCpfActionPerformed
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Candidato Adicionado");
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Excluído");    
+        
+    }//GEN-LAST:event_btnExcluirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -492,11 +562,13 @@ public class Janela1 extends javax.swing.JFrame {
     private javax.swing.JRadioButton RdbtnOutro;
     private javax.swing.JRadioButton RdbtnOutro2;
     private javax.swing.JRadioButton RdbtnSolteiro;
+    private javax.swing.JButton btnAdicionar;
     private javax.swing.JButton btnEditarCpf;
     private javax.swing.JButton btnEditarEmail;
     private javax.swing.JButton btnEditarIdade;
     private javax.swing.JButton btnEditarNome;
     private javax.swing.JButton btnEditarTelefone;
+    private javax.swing.JButton btnExcluir;
     private javax.swing.ButtonGroup btnGroupCargo;
     private javax.swing.ButtonGroup btnGroupEstadoCivil;
     private javax.swing.ButtonGroup btnGroupGenero;
@@ -505,8 +577,6 @@ public class Janela1 extends javax.swing.JFrame {
     private javax.swing.JCheckBox chkbxCaixa;
     private javax.swing.JCheckBox chkbxRepositor;
     private javax.swing.JCheckBox chkbxSeguranca;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
