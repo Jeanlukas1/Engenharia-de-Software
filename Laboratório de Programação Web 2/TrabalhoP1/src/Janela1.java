@@ -469,6 +469,7 @@ public class Janela1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O campo Nome ja esta vazio");
     }else{
         txtNome.setText("");
+        txtNome.requestFocus();
         }
         
     }//GEN-LAST:event_btnEditarNomeActionPerformed
@@ -479,6 +480,7 @@ public class Janela1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O campo Email ja esta vazio");
     }else{
         txtEmail.setText("");
+        txtEmail.requestFocus();
         }
     }//GEN-LAST:event_btnEditarEmailActionPerformed
 
@@ -488,6 +490,7 @@ public class Janela1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O campo Idade ja esta vazio");
     }else{
         txtIdade.setText("");
+        txtIdade.requestFocus();
         }
     }//GEN-LAST:event_btnEditarIdadeActionPerformed
 
@@ -497,6 +500,7 @@ public class Janela1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O campo Telefone ja esta vazio");
     }else{
         txtTelefone.setText("");
+        txtTelefone.requestFocus();
         }
     }//GEN-LAST:event_btnEditarTelefoneActionPerformed
 
@@ -506,16 +510,28 @@ public class Janela1 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "O campo CPF ja esta vazio");
     }else{
         txtCpf.setText("");
+        txtCpf.requestFocus();
         }
     }//GEN-LAST:event_btnEditarCpfActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
         // TODO add your handling code here:
+        txtNome.setText("");
+        txtCpf.setText("");
+        txtEmail.setText("");
+        txtTelefone.setText("");
+        txtIdade.setText("");
+        txtNome.requestFocus();
         JOptionPane.showMessageDialog(null, "Candidato Adicionado");
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
         // TODO add your handling code here:
+        txtNome.setText("");
+        txtCpf.setText("");
+        txtEmail.setText("");
+        txtTelefone.setText("");
+        txtIdade.setText("");
         JOptionPane.showMessageDialog(null, "Excluído");    
         
     }//GEN-LAST:event_btnExcluirActionPerformed
