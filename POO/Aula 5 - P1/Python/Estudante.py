@@ -35,7 +35,7 @@ class Estudante:
             print("5 - Sair")
             print('-' * 100)
 
-            escolha = int(input("Escolha uma das opções com base no seu respectivo dígito: "))
+            escolha = input("Escolha uma das opções com base no seu respectivo dígito: ")
 
             if escolha == 1:
                 nome = input("Nome do Aluno: ").lower()
@@ -45,7 +45,7 @@ class Estudante:
 
                 estudantes.append(estudante)
 
-                print("Aluno adicionado com sucesso !!!")
+                print(f"Aluno: {estudante.nome} adicionado com sucesso !!!")
             
             #Cadastro de notas de alunos
             elif escolha == 2:
@@ -63,7 +63,7 @@ class Estudante:
                 #verifica se o índice é válido
                 if 0 <= estudante_idx < len(estudantes):
                     #Define a nota do Aluno
-                    nota = float(input("Insira a Nota do Aluno: "))
+                    nota = float(input(f"Insira a Nota do {estudante.nome}: "))
                     #Escolhendo o objeto na lista e inserindo a nota nesse objeto
                     estudantes[estudante_idx].adicionar_notas(nota)
                     print("Nota adicionada!!")
