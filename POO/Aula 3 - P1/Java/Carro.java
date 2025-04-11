@@ -1,5 +1,3 @@
-package Aula 3 - P1.Java;
-
 //Definindo os Atributos 
 public class Carro {
     public String marca;
