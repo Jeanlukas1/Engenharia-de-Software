@@ -27,11 +27,13 @@ class Estudante:
         estudantes = []
 
         while True:
+            print('-' * 100)
             print("1 - Adicionar aluno")
             print("2 - Adionar nota")
             print("3 - Verificar aprovação")
             print("4 - Lista de Alunos Cadastrados")
             print("5 - Sair")
+            print('-' * 100)
 
             escolha = int(input("Escolha uma das opções com base no seu respectivo dígito: "))
 
@@ -79,11 +81,13 @@ class Estudante:
                         status = "Aprovado"
                     else:
                         status = "Reprovado"
+                    print('-' * 100)
                     print(f"""
-                          - Nome do Estudante {estudante.nome}
-                          - Média: {nota_media}
-                          - Status: {status}
+                        - Nome do Estudante {estudante.nome}
+                        - Média: {nota_media}
+                        - Status: {status}
                           """)
+                    print('-' * 100)
 
             #Inserir uma opção de listar os alunos cadastrados
              #Precisa mostrar:
@@ -97,8 +101,13 @@ class Estudante:
                     continue
                 else:
                     for est in estudantes:
-                        print(f"Nome - {est.nome} Idade - {est.idade} Notas - {est.notas}")
-            
+                        print('-' * 100)
+                        print(f"""
+                        - Nome do Estudante: {est.nome}
+                        - Idade: {est.idade}
+                        - Notas: {est.notas}                       
+                          """)
+                        print('-' * 100)
             elif escolha == 5:
                 print("Saindo......")
                 print("Obrigado por usar nosso sistema")
