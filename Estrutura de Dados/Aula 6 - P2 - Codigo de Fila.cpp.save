@@ -1,0 +1,105 @@
+#include <iostream>
+using namespace std;
+
+const int TAMANHO_MAXIMO = 5;  // limite definido da pilha
+
+class Pilha { //Tipos de dados
+private:
+    int dados[TAMANHO_MAXIMO];
+    int topo;
+    int capacidade;
+
+public:
+    Pilha(int cap) {
+        if (cap > TAMANHO_MAXIMO) {
+            cout << "Erro: Capacidade excede o limite máximo permitido." << endl;
+            capacidade = TAMANHO_MAXIMO;
+        } else {
+            capacidade = cap;
+        }
+        topo = -1;
+    }
+
+    bool estaVazia() { //Função que verifica se a pilha esta vazia
+        return topo == -1;
+    }
+
+    bool estaCheia() { //Função que verifica se a pilha esta cheia
+        return topo == capacidade - 1;
+    }
+
+    bool empilhar(int valor) {
+        if (estaCheia()) {
+            cout << "Erro: Pilha cheia!" << endl;
+            return false;
+        }
+        dados[++topo] = valor;
+        return true;
+    }
+
+    bool desempilhar(int& removido) {
+        if (estaVazia()) {
+            cout << "Erro: Pilha vazia!" << endl;
+            return false;
+        }
+        removido = dados[topo--];
+        return true;
+    }
+
+    void imprimir() {
+        if (estaVazia()) {
+            cout << "[Pilha vazia]" << endl;
+            return;
+        }
+
+        cout << "Pilha: ";
+        for (int i = 0; i <= topo; i++) {
+            cout << dados[i] << " ";
+        }
+        cout << endl;
+    }
+};
+
+int main() { //função principal que 
+    int tamanho;
+    cout << "Digite o tamanho máximo da pilha (máx. " << TAMANHO_MAXIMO << "): ";
+    cin >> tamanho;
+
+    if (tamanho <= 1 || tamanho > TAMANHO_MAXIMO) {
+        cout << "Erro: Tamanho inválido." << endl;
+        return 1;
+    }
+
+    Pilha pilha(tamanho);
+
+    cout << "Insira até " << tamanho - 1 << " elementos na pilha:" << endl;
+    for (int i = 0; i < tamanho - 1; i++) {
+        int valor;
+        cout << "Elemento " << i + 1 << ": ";
+        cin >> valor;
+        pilha.empilhar(valor);
+    }
+
+    cout << "\n--- Estado inicial da pilha ---" << endl;
+    pilha.imprimir();
+    cout << "A pilha está vazia? " << (pilha.estaVazia() ? "Sim" : "Não") << endl;
+    cout << "A pilha está cheia? " << (pilha.estaCheia() ? "Sim" : "Não") << endl;
+
+    int novo;
+    cout << "\nDigite um novo elemento para empilhar: ";
+    cin >> novo;
+    pilha.empilhar(novo);
+
+    cout << "\n--- Após empilhar novo elemento ---" << endl;
+    pilha.imprimir();
+
+    int removido;
+    if (pilha.desempilhar(removido)) {
+        cout << "\nElemento removido: " << removido << endl;
+    }
+
+    cout << "--- Após desempilhar ---" << endl;
+    pilha.imprimir();
+
+    return 0;
+}
