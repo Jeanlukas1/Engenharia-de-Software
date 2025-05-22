@@ -5,15 +5,15 @@
 
 from shutil import copyfile
 
-with open('origem.txt', 'w') as arquivo:
+with open('Lista de Exercicio de Manipulção de arquivos/origem.txt', 'w') as arquivo:
     arquivo.write("ola mundo \n")
     arquivo.write("Prazer em conhecelhos")
     
-with open('origem.txt', 'r') as arquivo:
+with open('Lista de Exercicio de Manipulção de arquivos/origem.txt', 'r') as arquivo:
     ler = arquivo.read()
     print(f"conteudo do arquivo: {ler}")
 
-copia = copyfile('origem.txt', 'copia.txt')
+copia = copyfile('Lista de Exercicio de Manipulção de arquivos/origem.txt', 'Lista de Exercicio de Manipulção de arquivos/copia.txt')
 
 print(f"Texto copiado no seu diretório como : {copia}")
 
