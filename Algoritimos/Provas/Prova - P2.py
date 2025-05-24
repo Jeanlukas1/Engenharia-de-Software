@@ -60,7 +60,7 @@ def ordenar_obras(lista_de_obras):
 
 def salvar_em_arquivo(lista_de_obras):
     if os.path.exists("Python_Artes.txt"):
-        resposta = print("Arquivo ja existe. Deseja subscrevelo? (s/n)")
+        resposta = input("Arquivo ja existe. Deseja subscrevelo? (s/n)")
         if resposta.lower() != "s":
             print("Digite novamente")
             return
