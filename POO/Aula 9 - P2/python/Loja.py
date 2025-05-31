@@ -1,6 +1,5 @@
 class Loja:
-    def __init__(self, nome):
-        self.nome = nome
+    def __init__(self):
         self.catalogo = []
         
 
@@ -34,19 +33,49 @@ class Loja:
     def oferecer_promo():
         pass
     
-class 
+class Conta:
+    @classmethod
+    def agencia(cls):
+        return "6452-4"
+    
+    def __init__(self, nome_cliente, numero_conta, cheque_especial, limite_cartao):
+        self.nome_cliente = nome_cliente 
+        self.numero_conta = numero_conta
+        self.cheque_especial = cheque_especial
+        self.limite_cartao = limite_cartao
+        self.__pix = None
+        self.saldo = 0
+        self.__senha = None
 
-pr1 = Loja("Jean Lukas")
+    def cadastrar(self, senha):
+        print(f"Olá, {self.nome_cliente}! Bem vindo ao Nosso PyBank!")
+        if self.__senha == None:
+            self.__senha = senha
+            print("Sua senha foi definida!")
+        elif self.__senha != None:
+            decisao = input("Você já possui uma senha definida, Deseja mudar a senha mesmo assim?")
+            if decisao == "sim":
+                self.__senha = senha
+        else:
+            print("Escolha errada!")
+    
+    def autenquicar_senha(self):
+        pass      
 
-pr1.adicionar_produto("Bola de futebol", "100")
-pr1.adicionar_produto("Casaco", "150")
-pr1.adicionar_produto("Tênis", "140")
-print("-" *100)
-pr1.listar_produto()
-print("-" *100)
-pr1.remover_produto("Tênis")
-print("-" *100)
-pr1.listar_produto()
-print("-" *100)
 
+# pr1 = Loja()
 
+# pr1.adicionar_produto("Bola de futebol", "100")
+# pr1.adicionar_produto("Casaco", "150")
+# pr1.adicionar_produto("Tênis", "140")
+# print("-" *100)
+# pr1.listar_produto()
+# print("-" *100)
+# pr1.remover_produto("Tênis")
+# print("-" *100)
+# pr1.listar_produto()
+# print("-" *100)
+
+c = Conta("Jean Lukas", "23132132131", "2000", "4000")
+
+c.cadastrar()
