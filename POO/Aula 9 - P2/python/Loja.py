@@ -5,7 +5,7 @@ class Loja:
     def adicionar_produto(self, produto, valor):
         catalogo = {
             "produto": produto,
-            "valor": valor
+            "valor": float(valor)
         }
         self.catalogo.append(catalogo)
         print(f"|Produto: {catalogo['produto']}, Valor: {catalogo['valor']}, cadastrado!.|")
@@ -26,8 +26,10 @@ class Loja:
 
     def realizar_venda(self):
         pass
+
     def oferecer_promo(self):
         pass
+
 
 class Conta:
     AGENCIA = "6452-4"
@@ -114,35 +116,24 @@ class Conta:
         print(f"Limite do Cartão: R$ {self.limite_cartao:.2f}")
         print(f"Chave PIX: {self.__pix if self.__pix else 'Não cadastrada'}")
 
+
 class LojaFisica(Loja):
     def __init__(self):
         super().__init__()
         self._desconto = 0.0 
     
-    def realizar_venda(self, metodo, Loja, item_index, produto):
+    def realizar_venda(self, metodo, conta, item_index, produto):
         item = self.remover_produto(item_index)
-        if item == produto:
-            print("Venda realizada com", metodo, "- Produto:", produto)
+        if item and item["produto"] == produto:
+            print("Venda realizada com", metodo)
+            print("Produto:", produto)
+            print("Desconto aplicado:", self._desconto * 100, "%")
         else:
             print("Erro: Produto não encontrado ou índice inválido.")
 
     def oferecer_promocao(self, desconto):
         self._desconto = desconto
         print("Promoção: desconto de", desconto * 100, "% aplicado.")
-
-
-pr1 = Loja()
-
-pr1.adicionar_produto("Bola de futebol", "100")
-pr1.adicionar_produto("Casaco", "150")
-pr1.adicionar_produto("Tênis", "140")
-print()
-print("-" *100)
-print()
-pr1.listar_produto()
-print()
-print("-" *100)
-print()
 
 
 usr1 = Conta("Jean Lukas", "23132132131")
@@ -190,10 +181,21 @@ print("-" *100)
 print()
 
 usr3 = LojaFisica()
+usr3.adicionar_produto("Bola de futebol", "100")
+usr3.adicionar_produto("Casaco", "150")
+usr3.adicionar_produto("Tênis", "140")
 print()
 print("-" *100)
 print()
-usr3.realizar_venda("pix", pr1, 1, "Casaco")
+usr3.listar_produto()
+print()
+print("-" *100)
+print()
+
+print()
+print("-" *100)
+print()
+usr3.realizar_venda("pix", usr1, 1, "Casaco")
 print()
 print("-" *100)
 print()
