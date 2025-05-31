@@ -38,11 +38,11 @@ class Conta:
     def agencia(cls):
         return "6452-4"
     
-    def __init__(self, nome_cliente, numero_conta, cheque_especial, limite_cartao):
+    def __init__(self, nome_cliente, numero_conta):
         self.nome_cliente = nome_cliente 
         self.numero_conta = numero_conta
-        self.cheque_especial = cheque_especial
-        self.limite_cartao = limite_cartao
+        self.cheque_especial = 0.0
+        self.limite_cartao = 0.0
         self.__pix = None
         self.saldo = 0
         self.__senha = None
@@ -56,11 +56,11 @@ class Conta:
             decisao = input("Você já possui uma senha definida, Deseja mudar a senha mesmo assim?")
             if decisao == "sim":
                 self.__senha = senha
-        else:
             print("Escolha errada!")
     
-    def autenquicar_senha(self):
-        pass      
+    def autenticar_senha(self, senha):
+        if self.__senha != None and self.__senha == senha:
+            print()
 
 
 # pr1 = Loja()
@@ -78,4 +78,5 @@ class Conta:
 
 c = Conta("Jean Lukas", "23132132131", "2000", "4000")
 
-c.cadastrar()
+c.cadastrar("1907050603")
+
