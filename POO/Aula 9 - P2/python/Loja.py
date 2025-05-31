@@ -33,6 +33,8 @@ class Loja:
         pass
     def oferecer_promo():
         pass
+    
+class 
 
 pr1 = Loja("Jean Lukas")
 
