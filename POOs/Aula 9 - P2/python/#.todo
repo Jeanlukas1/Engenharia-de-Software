@@ -1,0 +1,26 @@
+Class Loja:
+    ✔ catalogo[] @done (5/30/2025, 7:57:22 PM)
+    ✔ adiconar_produto(produto, valor) @done (5/30/2025, 7:57:25 PM)
+    ✔ listar_produtos() @done (5/30/2025, 8:01:23 PM)
+    ✔ remover_produto(produto) @done (5/30/2025, 8:47:32 PM)
+    ✔ realizar_venda() @done (5/30/2025, 8:55:09 PM)
+    ✔ oferecer_desconto() @done (5/30/2025, 9:08:28 PM)
+
+Class Conta:
+    Metodo Contrutor:
+        ✔ nome_cliente: str @done (5/30/2025, 11:02:57 PM)
+        ✔ numero_conta: str @done (5/30/2025, 11:02:59 PM)
+        ✔ agencia: str @done (5/30/2025, 11:02:58 PM)
+        ✔ saldo: float @done (5/30/2025, 11:03:01 PM)
+        ✔ limite, cheque_especial: float @done (5/30/2025, 11:03:00 PM)
+        ✔ limite: cartao: float @done (5/30/2025, 11:03:01 PM)
+        ✔ __pix Any @done (5/30/2025, 11:03:03 PM)
+        ✔ __senha: str @done (5/30/2025, 11:03:02 PM)
+    Métodos:
+        ✔ cadastrar() @done (5/31/2025, 2:00:34 PM)
+        ✔ autenticar_senha(senha:str) @done (5/31/2025, 2:00:35 PM)
+        ✔ cadastrar_pix(chave_pix:Any) @done (5/31/2025, 2:00:35 PM)
+        ✔ pix(chave_pix_origem, Valor: float) @done (5/31/2025, 2:00:37 PM)
+        ✔ cheque_especial(valor: float) @done (5/31/2025, 2:00:36 PM)
+        ✔ depositar(valor: float) @done (5/31/2025, 2:00:37 PM)
+        ✔ debito(valor: float) @done (5/31/2025, 2:00:38 PM)
