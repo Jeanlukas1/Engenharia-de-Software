@@ -1,0 +1,51 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "tC8Gf5UY9Dad-R_x2zlL9",
+      "type": "text",
+      "x": 456.5175264146592,
+      "y": -82.25440399514338,
+      "width": 833.2794189453125,
+      "height": 400,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "b1N",
+      "roundness": null,
+      "seed": 246880790,
+      "version": 34,
+      "versionNonce": 90265942,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1749852819325,
+      "link": null,
+      "locked": false,
+      "text": "Controle de Estoque Simples\n\nDescrição: Permita que o usuário adicione ou remova itens de um estoque. \nExiba a quantidade atual em estoque após cada operação. O programa deve continuar\n até que o usuário escolha sair.\n\nExemplo de Interação:\n\nAção:\n1. Adicionar itens\n2. Remover itens\n3. Sair\nEscolha uma opção: 1\nQuantidade a adicionar: 50\nEstoque atual: 50\n(Repetir processo ou encerrar)",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "left",
+      "verticalAlign": "top",
+      "containerId": null,
+      "originalText": "Controle de Estoque Simples\n\nDescrição: Permita que o usuário adicione ou remova itens de um estoque. \nExiba a quantidade atual em estoque após cada operação. O programa deve continuar\n até que o usuário escolha sair.\n\nExemplo de Interação:\n\nAção:\n1. Adicionar itens\n2. Remover itens\n3. Sair\nEscolha uma opção: 1\nQuantidade a adicionar: 50\nEstoque atual: 50\n(Repetir processo ou encerrar)",
+      "autoResize": true,
+      "lineHeight": 1.25
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
