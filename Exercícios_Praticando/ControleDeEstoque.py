@@ -12,3 +12,4 @@
 # Quantidade a adicionar: 50
 # Estoque atual: 50
 # (Repetir processo ou encerrar)
+
