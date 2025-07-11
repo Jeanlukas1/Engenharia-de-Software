@@ -1,93 +1,111 @@
-
 estoque = []
 
 
-def adicionar_produto(nome_produto, quantidade=0):
+def adicionar_produto(nome_produto, quantidade):
+    if quantidade <= 0:
+        print("\nERRO: A quantidade deve ser um número positivo.")
+        return
+
+    for produto in estoque:
+        if produto["nome_produto"] == nome_produto:
+            produto["quantidade"] += quantidade
+            print(f"\nEstoque de '{nome_produto}' atualizado para {produto['quantidade']} unidades.")
+            return
+
     dic_estoque = {
         "nome_produto": nome_produto,
         "quantidade": quantidade
     }
-
     estoque.append(dic_estoque)
-
-    print(
-        f"Produto: {dic_estoque["nome_produto"]} | Quantidade: {dic_estoque["quantidade"]}, Adicionado ao estoque!")
+    print(f"\nProduto '{nome_produto}' ({quantidade} unidades) adicionado com sucesso!")
 
 
 def remover_produto(nome_produto, quantidade):
     if not estoque:
-        print(f"Estoque vazio!")
+        print("\nEstoque vazio!")
         return
-    for i in estoque:
-        if i["nome_produto"] == nome_produto:
-            i["quantidade"] -= quantidade
-            if i["quantidade"] < 0:
-                print("Quantidade inválida, produto ja esgotado")
-                return
-            print(f"""
-        Estoque atualizado:
-        
-        {nome_produto}: {i["quantidade"]}  
-        """)
-        else:
-            print("Nome não encontrado na lista de estoque!")
+
+    produto_encontrado = False
+    for produto in estoque:
+        if produto["nome_produto"] == nome_produto:
+            produto_encontrado = True
+            if produto["quantidade"] >= quantidade:
+                produto["quantidade"] -= quantidade
+                print(f"""
+Estoque atualizado:
+{nome_produto}: {produto['quantidade']} unidades restantes.
+""")
+            else:
+                print(f"\nERRO: Impossível remover {quantidade} unidades. Apenas {produto['quantidade']} em estoque.")
+            break
+    if not produto_encontrado:
+        print("\nERRO: Produto não encontrado no estoque!")
 
 
 def listar_produtos():
     if not estoque:
-        print("Estoque vazio!")
+        print("\nO estoque está vazio!")
         return
 
+    print("\n--- LISTA DE ESTOQUE ---")
     for p in estoque:
-        print(f"""
-        {p["nome_produto"]}: {p["quantidade"]} |
-        """)
+        print(f"Produto: {p['nome_produto']} | Quantidade: {p['quantidade']}")
+    print("------------------------\n")
 
 
 def menu():
     while True:
-        print("Bem Vindo ao Nosso Sistema De Estoque")
-        print("""
-            Opção 1 : Adicionar Produto ao estoque
-            Opção 2 : Remover Quantidade de um certo produto
-            Opção 3 : Listar Produtos
-            Opção 4 : Sair  
-            """)
+        print("\nBem-vindo ao Sistema de Estoque")
+        print("1: Adicionar Produto")
+        print("2: Remover Quantidade de um Produto")
+        print("3: Listar Produtos")
+        print("4: Sair")
 
         try:
-            opcao = int(input("Digite o número da respectiva opção: "))
+            opcao_str = input("Digite o número da opção desejada: ")
+            if not opcao_str.isdigit():
+                print("\nERRO: Por favor, digite um número válido.")
+                continue
+            
+            opcao = int(opcao_str)
 
             if opcao == 1:
                 try:
-                    nome_produto = input(
-                        "Digite o Nome do produto a ser adicionado ao estoque: ")
-                    quantidade = int(
-                        input(f"Insira a quantidade de {nome_produto} a ser adicionado ao estoque: "))
+                    nome_produto = input("Digite o nome do produto: ").strip().upper()
+                    if not nome_produto:
+                        print("\nERRO: O nome do produto não pode ser vazio.")
+                        continue
 
+                    quantidade = int(input(f"Insira a quantidade de '{nome_produto}': "))
                     adicionar_produto(nome_produto, quantidade)
+                
                 except ValueError:
-                    print(
-                        f"Adicione um nome e quantidade válida ao estoque: {ValueError}")
+                    print("\nERRO: Quantidade inválida. Por favor, digite um número.")
 
-            if opcao == 2:
-                nome_produto = input("Digite o nome do produto: ")
-                quantidade = int(input(
-                    f"Insira a quantidade que deseja retirar do estoque do(a) {nome_produto}: "))
+            elif opcao == 2:
+                try:
+                    nome_produto = input("Digite o nome do produto: ").strip().upper()
+                    if not nome_produto:
+                        print("\nERRO: O nome do produto não pode ser vazio.")
+                        continue
+                        
+                    quantidade = int(input(f"Insira a quantidade a ser removida de '{nome_produto}': "))
+                    remover_produto(nome_produto, quantidade)
 
-                remover_produto(nome_produto, quantidade)
-                
-            if opcao == 3:
+                except ValueError:
+                    print("\nERRO: Quantidade inválida. Por favor, digite um número.")
+
+            elif opcao == 3:
                 listar_produtos()
-                
-            if opcao == 4:
-                print("Saindo....")
+
+            elif opcao == 4:
+                print("\nSaindo do sistema...")
                 break
-            
+
             else:
-                print("Por favor escolha um número presente no menu de opções.")
+                print("\nERRO: Opção inválida. Escolha um número do menu.")
 
-        except ValueError:
-            print(f"Número invalido: {ValueError}")
-
-
-menu()
+        except Exception as e:
+            print(f"\nOcorreu um erro inesperado: {e}")
+if __name__ == "__main__":
+    menu()
