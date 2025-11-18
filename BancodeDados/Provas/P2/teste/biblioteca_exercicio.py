@@ -1,6 +1,6 @@
 """
 EXERCÍCIO - Sistema de Biblioteca com Tkinter
-Complete as funções que estão marcadas com # TODO
+Complete as funções que estão marcadas com # 
 Siga o padrão do arquivo sql_tkinter.py
 """
 
@@ -10,9 +10,9 @@ import psycopg2
 from psycopg2 import Error as PsycopgError
 
 
-DB_NAME = "revisaop2"
-DB_USER = "postgres"
-DB_PASSWORD = "univassouras"
+DB_NAME = "banco"
+DB_USER = "biblioteca_leitor"
+DB_PASSWORD = "leitor123"
 DB_HOST = "localhost"
 
 
