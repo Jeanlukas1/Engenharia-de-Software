@@ -13,7 +13,7 @@ class Estudante:
     def pegar_media(self):
         if len(self.notas) == 0:
             return 0
-        return sum(self.notas) / len(self.notas)
+        return sum(self.notas) / 2
     
     #Mostra se o aluno esta com mais de 60% na nota de 100
     @property
@@ -35,7 +35,7 @@ class Estudante:
             print("5 - Sair")
             print('-' * 100)
 
-            escolha = input("Escolha uma das opções com base no seu respectivo dígito: ")
+            escolha = int(input("Escolha uma das opções com base no seu respectivo dígito: "))
 
             if escolha == 1:
                 nome = input("Nome do Aluno: ").lower()
