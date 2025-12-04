@@ -13,7 +13,7 @@ class Estudante:
     def pegar_media(self):
         if len(self.notas) == 0:
             return 0
-        return sum(self.notas) / 2
+        return sum(self.notas) / len(self.notas)
     
     #Mostra se o aluno esta com mais de 60% na nota de 100
     @property
@@ -62,11 +62,15 @@ class Estudante:
 
                 #verifica se o índice é válido
                 if 0 <= estudante_idx < len(estudantes):
+                    aluno = estudantes[estudante_idx]  # pegando o objeto correto
                     #Define a nota do Aluno
-                    nota = float(input(f"Insira a Nota do {estudante.nome}: "))
+                    nota = float(input(f"Insira a Nota do {aluno.nome}: "))
                     #Escolhendo o objeto na lista e inserindo a nota nesse objeto
-                    estudantes[estudante_idx].adicionar_notas(nota)
-                    print("Nota adicionada!!")
+                    if nota <= 10:
+                        aluno.adicionar_notas(nota)
+                        print("Nota adicionada!!")
+                    else:
+                        print("A nota deve ser menor ou igual a 10!")
 
                 else:
                     print("Índice de Aluno inválido.")
@@ -90,13 +94,12 @@ class Estudante:
                     print('-' * 100)
 
             #Inserir uma opção de listar os alunos cadastrados
-             #Precisa mostrar:
-                #nome dos alunos
-                #idade
-                #Lista das notas
-
+            #Precisa mostrar:
+            #nome dos alunos
+            #idade
+            #Lista das notas
             elif escolha == 4:
-                if not estudante:
+                if not estudantes:   # corrigido (antes estava "if not estudante")
                     print("Nenhum aluno cadastrado!!")
                     continue
                 else:
@@ -108,6 +111,7 @@ class Estudante:
                         - Notas: {est.notas}                       
                           """)
                         print('-' * 100)
+
             elif escolha == 5:
                 print("Saindo......")
                 print("Obrigado por usar nosso sistema")
