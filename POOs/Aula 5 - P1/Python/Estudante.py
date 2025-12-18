@@ -1,5 +1,4 @@
 class Estudante:
-    #definindo o método construtor
     def __init__(self, nome, idade):
         self.nome = nome
         self.idade = idade
@@ -52,7 +51,6 @@ class Estudante:
                 #Verificação se existe objeto definido na lista de Estudantes
                 if not estudantes:
                     print("Nenhum aluno cadastrado !!!")
-                    #Se a lista for vazia, volta para o menu
                     continue
                 #Iteração que forma um índice de alunos na listade Estudantes
                 for idx, estudante in enumerate(estudantes):
@@ -62,7 +60,7 @@ class Estudante:
 
                 #verifica se o índice é válido
                 if 0 <= estudante_idx < len(estudantes):
-                    aluno = estudantes[estudante_idx]  # pegando o objeto correto
+                    aluno = estudantes[estudante_idx]
                     #Define a nota do Aluno
                     nota = float(input(f"Insira a Nota do {aluno.nome}: "))
                     #Escolhendo o objeto na lista e inserindo a nota nesse objeto
@@ -93,13 +91,8 @@ class Estudante:
                           """)
                     print('-' * 100)
 
-            #Inserir uma opção de listar os alunos cadastrados
-            #Precisa mostrar:
-            #nome dos alunos
-            #idade
-            #Lista das notas
             elif escolha == 4:
-                if not estudantes:   # corrigido (antes estava "if not estudante")
+                if not estudantes:
                     print("Nenhum aluno cadastrado!!")
                     continue
                 else:

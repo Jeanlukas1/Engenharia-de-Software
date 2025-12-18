@@ -55,6 +55,6 @@ class Estoque:
     
 joao = Estoque("Jõao")
 
-joao.adicionar_produto("Pão", 30)
-joao.remover_produto("Pão", 5)
+joao.adicionar_produto("Pao", 30)
+joao.remover_produto("Pãzo", 5)
 joao.listar_produtos()
