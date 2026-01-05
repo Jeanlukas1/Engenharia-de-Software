@@ -1,9 +1,9 @@
 # Leitura dos dados
-for i in range(2):
-    codigo1 = int(input(f"Digite o codigo da peça {i+1}: "))
-    num1 = int(input(f"Digite a quantidade de peças {i+1}: "))
-    valor1 = float(input(f"Digite o valor da peça {i+1}: "))
+import math
 
-total = (num1 * valor1) + (num1 * valor1)
+x1, y1 = map(float, input("Digite o valor de x1 e y1 (ex: 10 20): ").split())
+x2, y2 = map(float, input("Digite o valor de x2 e y2 (ex: 10 20): ").split())
 
-print(f"Total: R$ {total:.2f}")
+distancia = math.sqrt((x2 - x1)**2 + (y2 -y1)**2)
+
+print(f"Distancia entre os dois pontos é: {distancia:.4f}")
