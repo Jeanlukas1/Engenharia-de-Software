@@ -10,7 +10,7 @@ templates = Jinja2Templates(directory="templates")
 def home(request: Request):
     mensagem = saudacao("Jean")
     
-    somadenum = soma(10, 10)
+    somadenum = soma(20, 10)
     
     return templates.TemplateResponse(
         "index.html",
