@@ -16,5 +16,7 @@ def usuarios(lista_de_usuarios):
         for user in lista_de_usuarios:
             print("Email:" ,user['email'], "Senha:" ,user['senha'],)
             
-    
+
+cadastro("Lukasjean745@gmail.com", 1907050603)
+
 usuarios(lista_de_usuarios)
