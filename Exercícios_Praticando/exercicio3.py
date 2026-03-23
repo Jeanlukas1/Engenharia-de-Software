@@ -1,4 +1,3 @@
-# Exercício 3: Sistema de Tarefas (POO)
 
 class Tarefa:
     def __init__(self, titulo):
