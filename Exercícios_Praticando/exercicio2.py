@@ -1,4 +1,3 @@
-# Exercício 2: Calculadora com Funções
 
 def soma(a, b):
     return a + b
