@@ -1,0 +1,24 @@
+services:
+  apache:
+    image: httpd:latest
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - .:/usr/local/apache2/htdocs
+
+    networks:
+      - webnet
+  nginx:
+    image: nginx:latest
+
+    ports:
+      - "8081:80"
+
+    volumes:
+      - .:/usr/share/nginx/html
+
+networks:
+  webnet:
+    driver: bridge
