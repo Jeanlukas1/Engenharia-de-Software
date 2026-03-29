@@ -1,4 +1,3 @@
-# Leitura dos dados
 import math
 
 x1, y1 = map(float, input("Digite o valor de x1 e y1 (ex: 10 20): ").split())
