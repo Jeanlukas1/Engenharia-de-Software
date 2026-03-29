@@ -14,4 +14,3 @@ while True:
     
     if continuar != "S":
         break
-    
