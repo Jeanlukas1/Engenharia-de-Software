@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from bson import ObjectId
 from db.database import users_collection
-from schema.schema import User
+from schema.user_schema import User
 
 router = APIRouter()
 
