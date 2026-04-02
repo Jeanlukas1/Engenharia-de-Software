@@ -12,9 +12,9 @@ def list_users():
     for user in users_collection.find():
         user["_id"] = str(user["_id"])
         users.append(user)
+        
+    return users, 200
     
-    return users
-
 @router.post("/users")
 def create_user(user: User):
     user_dict = user.model_dump()
@@ -48,11 +48,12 @@ def update_user(user_id:str, user: User):
     return {"message": "user updated"}, 200
 
 @router.delete("/users/{user_id}")
-def delete_user(user_id:str):
+def delete_user(user_id: str):
     result = users_collection.delete_one(
         {"_id": ObjectId(user_id)}
     )
 
-    if result.matched_count == 0:
+    if result.deleted_count == 0:
         return {"error": "user not found"}, 404
-    return {"message": "user deleted succefully"}, 200
+
+    return {"message": "user deleted successfully"}, 200
