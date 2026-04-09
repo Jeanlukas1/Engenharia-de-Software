@@ -13,7 +13,7 @@ def list_users():
         user["_id"] = str(user["_id"])
         users.append(user)
         
-    return users, 200
+    return users
     
 @router.post("/users")
 def create_user(user: User):
@@ -56,4 +56,4 @@ def delete_user(user_id: str):
     if result.deleted_count == 0:
         return {"error": "user not found"}, 404
 
-    return {"message": "user deleted successfully"}, 200
+    return {"message": "user deleted successfully"}
