@@ -6,6 +6,8 @@ db = client["python"]
 
 collection = db["user"]
 
+print(list(collection.find()))
+
 print(collection.insert_one({
     "nome": "Jean Lukas de Marins Costa"
 }))
