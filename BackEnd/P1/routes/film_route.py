@@ -22,5 +22,11 @@ def list_films():
     for film in film_collection.find():
         film["_id"] = str(film["_id"])
         films.append(film)
+        
+    length = len(films)
+        
+    return {
+        "films": films, 
+        "length": length
+    }
 
-    return films        
