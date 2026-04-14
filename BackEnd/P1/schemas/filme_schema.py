@@ -1,4 +1,7 @@
 from pydantic import BaseModel
 
-class Films(BaseModel):
-    
+class Film(BaseModel):
+    title: str
+    description: str
+    genre: str
+    year: int
