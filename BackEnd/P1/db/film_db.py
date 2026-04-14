@@ -1,5 +1,5 @@
-from pymongo import mongo_client
+from pymongo import MongoClient
 
-client = mongo_client["mongodb://localhost:27018/"]
+client = MongoClient("mongodb://localhost:27018/")
 db = client["film_database"]
 film_collection = db["films"]
