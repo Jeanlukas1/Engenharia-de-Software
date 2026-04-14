@@ -1,4 +1,3 @@
-from fastapi import FastAPI
 from fastapi import APIRouter
 from bson import objectid
 from schemas.film_schema import Film
@@ -15,3 +14,13 @@ def create_film(film: Film):
         "message": "Film Created",
         "id": str(result.inserted_id)
     }
+    
+@router.get("/filmes", status_code=200)
+def list_films():
+    films = []
+    
+    for film in film_collection.find():
+        film["_id"] = str(film["_id"])
+        films.append(film)
+
+    return films        
