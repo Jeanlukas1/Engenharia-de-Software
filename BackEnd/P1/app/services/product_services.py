@@ -17,8 +17,8 @@ def create_product_service(product):
             "_id": str(result.inserted_id)
         }
     
-    except:
-        raise HTTPException(status_code=404, detail="Invalid Body")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 def get_by_id_service(_id):
     try:
